@@ -1,0 +1,23 @@
+@exp1run.sh starts: Y. Sasaki and H. Arimura, Hokkaido University, 2015
+2015年 7月16日 木曜日 22時09分16秒 JST
+@exp1run.sh: exp paramters
+ORGDATA: data/pdbCAall.txt
+USE_CMDA=1	 USE_CMDB=1
+EXPDIR=./exp
+LOGFILE=./exp/log150716_220916_n100w0r.txt
+r=0.1
+ n=100
+ w=100
+ ALLPATSIZES: [3]
+@apsmatch:  textfile: ./exp/dat_n100w100rand.txt;  patfile: ./exp/pat_k3w6rand.txt;  r: 0.1
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 3
+@apsmatch: @stat running time: 0.0999951 (sec)
+@apsmatch: @stat #match=27	#visit=220
+@apsmatch: @stat min rmsd=3.8833e-16	r=0.1
+@apsmatch:  textfile: ./exp/dat_n100w100rand.txt;  patfile: ./exp/pat_k3w6rand.txt;  r: 0.1
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 3
+@apsmatch: @stat running time: 10.4163 (sec)
+@apsmatch: @stat #match=27	#visit=980201
+@apsmatch: @stat min rmsd=3.8833e-16	r=0.1

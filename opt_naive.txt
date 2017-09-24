@@ -1,0 +1,36 @@
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -1 < testdir/3khw_CA.txt > _CA.txt
+./naive_match.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 1
+@apsmatch: @stat running time: 0.00150394 (sec)
+@apsmatch: @stat #match=100	#visit=101
+@apsmatch: @stat min rmsd=0	r=1.7e+308
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -2 < testdir/3khw_CA.txt > _CA.txt
+./naive_match.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 2
+@apsmatch: @stat running time: 0.095469 (sec)
+@apsmatch: @stat #match=9900	#visit=10001
+@apsmatch: @stat min rmsd=5.63152e-05	r=1.7e+308
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -3 < testdir/3khw_CA.txt > _CA.txt
+./naive_match.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 3
+@apsmatch: @stat running time: 9.04159 (sec)
+@apsmatch: @stat #match=970200	#visit=980201
+@apsmatch: @stat min rmsd=0.0113998	r=1.7e+308
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -4 < testdir/3khw_CA.txt > _CA.txt
+./naive_match.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 4
+@apsmatch: @stat running time: 956.935 (sec)
+@apsmatch: @stat #match=94109400	#visit=95089601
+@apsmatch: @stat min rmsd=0.0440604	r=1.7e+308

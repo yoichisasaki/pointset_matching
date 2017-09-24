@@ -1,0 +1,35 @@
+### 2015.05.25, Yoichi Sasaki and Hiroki Arimura. 
+### PDB
+http://www.rcsb.org/pdb/home/home.do
+
+### influenza A virus (H10N8), Hemagglutinin HA1 chain
+http://www.rcsb.org/pdb/explore/explore.do?structureId=4XQ5
+title: Human-infecting H10N8 influenza virus retains strong preference for avian-type receptors
+DOI:10.2210/pdb4xq5/pdb
+
+%%% Protein feature
+Classification:	Viral Protein
+Structure Weight:	169717.47 
+Molecule:	Hemagglutinin HA1 chain
+Polymer:	1	Type:	protein	Length:	323	
+Chains:	A, C, E
+Fragment:	residues 18-336
+Organism:	Influenza A virus (A/Jiangxi/IPB13/2013(H10N8))
+Gene Name:	HA	
+UniProtKB:	Search PDB | A0A059T4A1  
+
+===
+%%% Citation
+A Human-Infecting H10N8 Influenza Virus Retains a Strong Preference for Avian-type Receptors.
+
+Zhang, H.,  de Vries, R.P.,  Tzarum, N.,  Zhu, X.,  Yu, W.,  McBride, R.,  Paulson, J.C.,  Wilson, I.A.
+
+Journal: (2015) Cell Host Microbe 17: 377-384
+
+PubMed: 25766296  	
+PubMedCentral: PMC4359746  	
+DOI: 10.1016/j.chom.2015.02.006   
+Search Related Articles in PubMed  
+PubMed Abstract:
+Recent avian-origin H10N8 influenza A viruses that have infected humans pose a potential pandemic threat. Alterations in the viral surface glycoprotein, hemagglutinin (HA), typically are required for influenza A viruses to cross the species barrier for adaptation to a new... [ Read More & Search PubMed Abstracts ]
+===

@@ -1,0 +1,11 @@
+@exp1run.sh starts: Y. Sasaki and H. Arimura, Hokkaido University, 2015
+2015年 7月16日 木曜日 22時07分44秒 JST
+@exp1run.sh: exp paramters
+ORGDATA: data/pdbCAall.txt
+USE_CMDA=1	 USE_CMDB=1
+EXPDIR=./exp
+LOGFILE=./exp/log150716_220744_n100w0r.txt
+r=0.1
+ n=100
+ w=100
+ ALLPATSIZES: [3]

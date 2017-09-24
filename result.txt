@@ -1,0 +1,3 @@
+r = 0.1
+Processing time: 0.000937939
+The number of occurrence: 1

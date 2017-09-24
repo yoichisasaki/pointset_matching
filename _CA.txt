@@ -1,0 +1,4 @@
+REMARK 500 SYMMETRY ARE IN CLOSE CONTACT.  AN ATOM LOCATED WITHIN 0.15          
+ATOM      2  CA  ASP A   1      83.051 -28.770 161.647  1.00 69.23           C  
+ATOM     10  CA  GLN A   2      81.637 -29.322 158.108  1.00 67.12           C  
+ATOM     19  CA  ILE A   3      81.793 -31.415 154.949  1.00 62.73           C  

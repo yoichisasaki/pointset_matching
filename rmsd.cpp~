@@ -1,0 +1,183 @@
+#include <assert.h>
+#include "rmsd.hpp"
+
+using namespace std;
+using namespace Eigen;
+
+//大域変数
+int num_match = 0; //見つけたマッチの回数 
+int num_visit = 0; //候補の訪問回数
+double min_rmsd = 1000 * 1000 * 1000; //候補の訪問回数
+//double min_rmsd = INT_MAX; //候補の訪問回数
+
+
+//含まれていたら真を返す．
+bool is_contained_datapoint(int x, vector<Point>& candi, vector<Point>& dataseq) {
+      for(size_t y = 0; y < candi.size(); y++){
+	if(candi[y] == dataseq[x]){
+	  return true; 
+	} 
+      }
+      return false; 
+}
+
+
+
+Point centroid(vector<Point>& pseq, int len)
+{
+  double sumx = 0;
+  double sumy = 0;
+  double sumz = 0;
+  for (int i = 0; i < len; i++) {
+    sumx += pseq[i].getx();
+    sumy += pseq[i].gety();
+    sumz += pseq[i].getz();
+  }
+  double gx = sumx / len;
+  double gy = sumy / len;
+  double gz = sumz / len;
+  int dummyid = -1;
+  return Point(dummyid, gx, gy, gz);
+}
+/*
+  double MSSD(vector<Point>& s, vector<Point>& t)  //s,t大文字
+  {
+  int len = (int)s.size();
+  Point s_center = centroid(s, len);
+  Point t_center = centroid(t, len);
+  MatrixXd J(3,3);
+  J << 0,0,0,
+  0,0,0,
+  0,0,0;
+  
+  for(int i = 0; i < len; i++) {
+  MatrixXd Ji(3, 3);
+  Vector3d si(s[i].getx() - s_center.getx(),
+  s[i].gety() - s_center.gety(),
+  s[i].getz() - s_center.getz());
+  Vector3d ti(t[i].getx() - t_center.getx(),
+  t[i].gety() - t_center.gety(),
+  t[i].getz() - t_center.getz());
+    
+  Ji << si[X]*ti[X], si[X]*ti[Y], si[X]*ti[Z], 
+  si[Y]*ti[X], si[Y]*ti[Y], si[Y]*ti[Z], 
+  si[Z]*ti[X], si[Z]*ti[Y], si[Z]*ti[Z];
+  J = J + Ji;
+  }
+  
+  MatrixXd  U(3,3), V(3,3), R(3,3);  
+  JacobiSVD<MatrixXd> svd(J, ComputeFullU | ComputeFullV);
+  U = svd.matrixU();
+  V = svd.matrixV();
+  Matrix3d U_t = U.transpose();
+  R = V * U_t;
+  
+  double MSSD = 0;
+  for(int i = 0; i < len; i++) {
+  Vector3d si(s[i].getx() - s_center.getx(),
+  s[i].gety() - s_center.gety(),
+  s[i].getz() - s_center.getz());
+  Vector3d ti(t[i].getx() - t_center.getx(),
+  t[i].gety() - t_center.gety(),
+  t[i].getz() - t_center.getz());
+  double normi= (ti - (R * si)).norm();
+  MSSD = MSSD + normi * normi;
+  }
+  return MSSD;
+  }
+*/
+
+double RMSD(vector<Point>& s, vector<Point>& t)  //s,t大文字
+{
+  assert(s.size() == t.size()); 
+
+  int len = (int)s.size();
+  Point s_center = centroid(s, len);
+  Point t_center = centroid(t, len);
+  MatrixXd J(3,3);
+  J << 0,0,0,
+    0,0,0,
+    0,0,0;
+  
+  //Step 1: 新しいデータ行列を計算する
+  for(int i = 0; i < len; i++) {
+
+    //Step 1a: CreateJi(s, t, s_center, t_center): 
+    //i番目の点に関する行列Jiを計算する
+    MatrixXd Ji(3, 3);
+    Vector3d si(s[i].getx() - s_center.getx(),
+                s[i].gety() - s_center.gety(),
+                s[i].getz() - s_center.getz());
+    Vector3d ti(t[i].getx() - t_center.getx(),
+                t[i].gety() - t_center.gety(),
+                t[i].getz() - t_center.getz());
+    
+    Ji << si[X]*ti[X], si[X]*ti[Y], si[X]*ti[Z], 
+      si[Y]*ti[X], si[Y]*ti[Y], si[Y]*ti[Z], 
+      si[Z]*ti[X], si[Z]*ti[Y], si[Z]*ti[Z];
+
+    //Step 1b: 新しいJiを加えて，Jを更新する
+    J = J + Ji;
+  }
+
+  //Step 2: ComputeR(J): 
+  //  変換行列Rを計算する  
+  MatrixXd  U(3,3), V(3,3), R(3,3);  
+  JacobiSVD<MatrixXd> svd(J, ComputeFullU | ComputeFullV);
+  U = svd.matrixU();
+  V = svd.matrixV();
+  Matrix3d U_t = U.transpose();
+  R = V * U_t;
+  
+  //Step 3: ComputeDistance(R, s, t, s_center, t_center)
+  double MSSD = 0;
+  for(int i = 0; i < len; i++) {
+    Vector3d si(s[i].getx() - s_center.getx(),
+                s[i].gety() - s_center.gety(),
+                s[i].getz() - s_center.getz());
+    Vector3d ti(t[i].getx() - t_center.getx(),
+                t[i].gety() - t_center.gety(),
+                t[i].getz() - t_center.getz());
+    double normi= (ti - (R * si)).norm();
+    MSSD = MSSD + normi * normi;
+  }
+  double RMSD = 0;
+  RMSD =sqrt(MSSD/static_cast<double>(len));
+  return RMSD;
+}
+
+
+//追加分
+//二つの点のL2距離を求める
+double dist2(Point p, Point q) {
+  double dx = (p.getx() - q.getx()); 
+  double dy = (p.gety() - q.gety()); 
+  double dz = (p.getz() - q.getz()); 
+  double d = sqrt(dx*dx + dy*dy + dz*dz);
+  return d; 
+}
+
+//#define DEBUG_RADIUS
+//データ集合のL２距離での半径と中心を求める．
+void compute_radius(vector<Point> dataseq, int *center_pt, double *radius_pt) {
+  *center_pt = -1;  //center
+  *radius_pt = (double) INT_MAX; 
+  for (int i = 0; i < dataseq.size(); i++) {
+    Point c = dataseq[i]; 
+    double r = 0.0; 
+    //中心cからのデータ点の最長距離＝cからの半径を求める．
+    for (int j = 0; j < dataseq.size(); j++) {
+      Point q = dataseq[j]; 
+      double d = dist2(c, q); 
+      if (d > r) r = d; 
+    }
+    //ここで中心icに対する半径rが求まる
+    if (r < *radius_pt) {
+      *radius_pt = r; 
+      *center_pt = i; 
+    }
+#ifdef DEBUG_RADIUS
+    printf("debug: pid=%d, r=%f, radius=%f, ceter=%d\n", i, r, *radius_pt, *center_pt); 
+#endif
+ }
+}

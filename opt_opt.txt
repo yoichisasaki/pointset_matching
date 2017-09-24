@@ -1,0 +1,180 @@
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -1 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 1
+@apsmatch: @stat running time: 0.000707865 (sec)
+@apsmatch: @stat #match=1	#visit=2
+@apsmatch: @stat min rmsd=0	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -2 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 2
+@apsmatch: @stat running time: 0.0634949 (sec)
+@apsmatch: @stat #match=4	#visit=105
+@apsmatch: @stat min rmsd=5.63152e-05	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -3 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 3
+@apsmatch: @stat running time: 0.143934 (sec)
+@apsmatch: @stat #match=12	#visit=275
+@apsmatch: @stat min rmsd=0.0113998	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -4 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 4
+@apsmatch: @stat running time: 0.221835 (sec)
+@apsmatch: @stat #match=15	#visit=503
+@apsmatch: @stat min rmsd=0.0440604	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -5 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 5
+@apsmatch: @stat running time: 0.647556 (sec)
+@apsmatch: @stat #match=23	#visit=1270
+@apsmatch: @stat min rmsd=0.0579016	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -6 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 6
+@apsmatch: @stat running time: 2.03243 (sec)
+@apsmatch: @stat #match=33	#visit=3800
+@apsmatch: @stat min rmsd=0.103023	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -7 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 7
+@apsmatch: @stat running time: 2.69665 (sec)
+@apsmatch: @stat #match=37	#visit=4960
+@apsmatch: @stat min rmsd=0.125679	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -8 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 8
+@apsmatch: @stat running time: 5.93632 (sec)
+@apsmatch: @stat #match=47	#visit=10826
+@apsmatch: @stat min rmsd=0.176591	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -9 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 9
+@apsmatch: @stat running time: 7.60573 (sec)
+@apsmatch: @stat #match=59	#visit=14280
+@apsmatch: @stat min rmsd=0.177411	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -10 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 10
+@apsmatch: @stat running time: 18.7357 (sec)
+@apsmatch: @stat #match=67	#visit=33864
+@apsmatch: @stat min rmsd=0.21255	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -11 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 11
+@apsmatch: @stat running time: 28.4174 (sec)
+@apsmatch: @stat #match=72	#visit=48663
+@apsmatch: @stat min rmsd=0.207027	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -12 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 12
+@apsmatch: @stat running time: 37.9777 (sec)
+@apsmatch: @stat #match=78	#visit=66705
+@apsmatch: @stat min rmsd=0.213766	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -13 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 13
+@apsmatch: @stat running time: 59.1154 (sec)
+@apsmatch: @stat #match=123	#visit=97976
+@apsmatch: @stat min rmsd=0.229985	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -14 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 14
+@apsmatch: @stat running time: 96.1959 (sec)
+@apsmatch: @stat #match=175	#visit=154543
+@apsmatch: @stat min rmsd=0.294885	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -15 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 15
+@apsmatch: @stat running time: 116.209 (sec)
+@apsmatch: @stat #match=200	#visit=196500
+@apsmatch: @stat min rmsd=0.317679	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -16 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 16
+@apsmatch: @stat running time: 336.186 (sec)
+@apsmatch: @stat #match=216	#visit=515825
+@apsmatch: @stat min rmsd=0.343259	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -17 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 17
+@apsmatch: @stat running time: 475.992 (sec)
+@apsmatch: @stat #match=296	#visit=749673
+@apsmatch: @stat min rmsd=0.401909	r=1.7e+308
+#"\n####### Opt ####### "
+head -100 < testdir/3lkp_CA.txt > _PDB.txt
+head -18 < testdir/3khw_CA.txt > _CA.txt
+./pruned_opt.exe _PDB.txt _CA.txt 1.7E+308
+@apsmatch:  textfile: _PDB.txt;  patfile: _CA.txt;  r: 1.7e+308
+@apsmatch: num data points: 100
+@apsmatch: num patt points: 18
+@apsmatch: @stat running time: 1248.02 (sec)
+@apsmatch: @stat #match=325	#visit=1980776
+@apsmatch: @stat min rmsd=0.499473	r=1.7e+308
